@@ -2,5 +2,5 @@
 
 int main()
 {
-    
+    cout<<"emmmm"<<endl;
 }
