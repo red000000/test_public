@@ -4,6 +4,6 @@
 int main()
 {
 	std::cout << "hello" << std::endl;
-	me::mouselo();
+	mou::mouselo();
 	return 0;
 }
