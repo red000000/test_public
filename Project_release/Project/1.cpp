@@ -1,6 +1,6 @@
 #include<iostream>
 #include<Windows.h>
-namespace me
+namespace mou
 {
 	void Mouselo()
 	{
