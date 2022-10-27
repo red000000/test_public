@@ -1,9 +1,12 @@
 #include<iostream>
 #include<Windows.h>
-#include"1.h"
+#include"mouse.h"
+POINT p;
 int main()
 {
 	std::cout << "hello" << std::endl;
-	mou::mouselo();
+	mou::mouselo(p);
+	Sleep(5000);
+	mou::setmouselo();
 	return 0;
 }
