@@ -1,9 +1,12 @@
 #include<iostream>
 #include<Windows.h>
-#include"1.h"
+#include<fstream>
+#include"mouse.h"
+POINT p;
 int main()
 {
-	std::cout << "hello" << std::endl;
-	mou::mouselo();
+	//mou::mouselo(p);
+	mou::mouse();
+	std::cout << "ok" << std::endl;
 	return 0;
 }
