@@ -31,10 +31,36 @@ namespace mou
 				break;
 		}
 	}
-	void setmouselo()
+	void mouse()
 	{
-
-		SetCursorPos();
+		std::ifstream mouselofile;
+		mouselofile.open("mouselofile.txt",std::ios::in);
+		if (!mouselofile.is_open())
+		{
+			std::cout << "打开鼠标位置文件失败,请检查" << std::endl;
+			return;
+		}
+		while (!mouselofile.eof())
+		{
+			int x, y, mode;
+			mouselofile >> x, mouselofile >> y, mouselofile >> mode;
+			SetCursorPos(x,y);
+			if (mode == 1)
+			{
+				mouse_event(MOUSEEVENTF_LEFTDOWN|MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+			}
+			if (mode == 2)
+			{
+				mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+				Sleep(10);
+				mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+			}
+			if (mode == 3)
+			{
+				mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
+			}
+			Sleep(2000);
+		}
+		mouselofile.close();
 	}
-
 }
